@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 
 //    Route::get('admin','UserController@getUser');
-Route::get('foo', 'admin\UserController@getUser');
+//Route::get('foo', 'admin\UserController@getUser');
+
+Route::get('/','StaticPagesController@home');
+Route::get('/help','StaticPagesController@help');
+Route::get('/about','StaticPagesController@about');
