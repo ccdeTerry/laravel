@@ -204,4 +204,6 @@ return [
 
     ],
 
+
+    'locale' => 'zh-CN',
 ];
