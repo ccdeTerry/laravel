@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
 use Validator;
+use Auth;
 class UsersController extends Controller
 {
     //注册现实
@@ -32,9 +34,12 @@ class UsersController extends Controller
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
         ]);
+        Auth::login($user);
         session()->flash('success','恭喜'.$user->name.',注册成功');
         return redirect()->route('users.show',[$user]);
 
     }
+
     
+
 }
